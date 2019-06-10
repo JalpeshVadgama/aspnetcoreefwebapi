@@ -1,0 +1,14 @@
+D:\MyData\YouTube\Code\CoolApi\bin\Debug\netcoreapp2.2\CoolApi.deps.json
+D:\MyData\YouTube\Code\CoolApi\bin\Debug\netcoreapp2.2\CoolApi.runtimeconfig.json
+D:\MyData\YouTube\Code\CoolApi\bin\Debug\netcoreapp2.2\CoolApi.runtimeconfig.dev.json
+D:\MyData\YouTube\Code\CoolApi\bin\Debug\netcoreapp2.2\CoolApi.dll
+D:\MyData\YouTube\Code\CoolApi\bin\Debug\netcoreapp2.2\CoolApi.pdb
+D:\MyData\YouTube\Code\CoolApi\obj\Debug\netcoreapp2.2\CoolApi.csprojAssemblyReference.cache
+D:\MyData\YouTube\Code\CoolApi\obj\Debug\netcoreapp2.2\CoolApi.csproj.CoreCompileInputs.cache
+D:\MyData\YouTube\Code\CoolApi\obj\Debug\netcoreapp2.2\CoolApi.RazorAssemblyInfo.cache
+D:\MyData\YouTube\Code\CoolApi\obj\Debug\netcoreapp2.2\CoolApi.RazorAssemblyInfo.cs
+D:\MyData\YouTube\Code\CoolApi\obj\Debug\netcoreapp2.2\CoolApi.AssemblyInfoInputs.cache
+D:\MyData\YouTube\Code\CoolApi\obj\Debug\netcoreapp2.2\CoolApi.AssemblyInfo.cs
+D:\MyData\YouTube\Code\CoolApi\obj\Debug\netcoreapp2.2\CoolApi.RazorTargetAssemblyInfo.cache
+D:\MyData\YouTube\Code\CoolApi\obj\Debug\netcoreapp2.2\CoolApi.dll
+D:\MyData\YouTube\Code\CoolApi\obj\Debug\netcoreapp2.2\CoolApi.pdb
