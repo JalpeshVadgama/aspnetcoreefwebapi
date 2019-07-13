@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using CoolApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace CoolApi
 {
@@ -30,6 +31,22 @@ namespace CoolApi
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<StudentContext>(opt => opt.UseSqlServer(connectionString));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info
+                {
+                    Version = "v1",
+                    Title = "Cool ASP.NET Core Rest API",
+                    Description = "List of ASP.NET Core Rest API",
+                    TermsOfService = "None",
+                    Contact = new Contact()
+                    {
+                        Name = "Jalpesh Vagdama",
+                        Email = "codewtihjv@gmail.com",
+                        Url = "https://twitter.com/jalpesh"
+                    }
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +63,14 @@ namespace CoolApi
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cool ASP.NET Core Rest API");
+            });
             app.UseMvc();
         }
     }
