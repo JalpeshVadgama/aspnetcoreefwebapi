@@ -56,6 +56,48 @@ namespace CoolApi.Controllers
             return Ok(student);
         }
 
+        [HttpPut]
+        public async Task<ActionResult> Update([FromBody]Student student)
+        {
+            if (student == null)
+            {
+                return NotFound("Stduent data is not supplied");
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            Student existingStudent = _studentContext.Students.FirstOrDefault(s => s.StudentId == student.StudentId);
+            if (existingStudent == null)
+            {
+                return NotFound("Student does not exist in the database");
+            }
+            existingStudent.FirstName = student.FirstName;
+            existingStudent.LastName = student.LastName;
+            existingStudent.State = student.State;
+            existingStudent.City = student.City;
+            _studentContext.Attach(existingStudent).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            await _studentContext.SaveChangesAsync();
+            return Ok(existingStudent);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound("Id is not supplied");
+            }
+            Student student = _studentContext.Students.FirstOrDefault(s => s.StudentId == id);
+            if (student == null)
+            {
+                return NotFound("No student found with particular id supplied");
+            }
+            _studentContext.Students.Remove(student);
+            await _studentContext.SaveChangesAsync();
+            return Ok("Student is deleted sucessfully.");
+        }
+
         ~StudentController()
         {
             _studentContext.Dispose();
